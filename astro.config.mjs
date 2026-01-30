@@ -13,7 +13,13 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   image: {
-    domains: ['127.0.0.1']
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: '127.0.0.1',
+        port: '8090',
+      }
+    ]
   },
   adapter: netlify()
 });
