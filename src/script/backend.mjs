@@ -1,9 +1,9 @@
 import PocketBase from 'pocketbase';
-const db = new PocketBase('http://127.0.0.1:8090');
+const pb = new PocketBase('http://127.0.0.1:8090');
 
 export async function getOffres() {
     try {
-        let data = await db.collection('maisons').getFullList({
+        let data = await pb.collection('maisons').getFullList({
             sort: '-created',
         });
         return data;
@@ -11,4 +11,8 @@ export async function getOffres() {
         console.log(error);
         return [];
     }
+}
+
+export async function getImageUrl(record, recordImage) {
+    return pb.files.getURL(record, recordImage);
 }

@@ -12,6 +12,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-
+  image: {
+    domains: ['127.0.0.1']
+  },
   adapter: netlify()
 });

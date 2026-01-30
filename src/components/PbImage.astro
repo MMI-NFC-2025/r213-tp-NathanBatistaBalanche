@@ -1,0 +1,17 @@
+---
+import { getImageUrl } from '../script/backend.mjs';
+
+const { record, recordImage } = Astro.props;
+
+const imageURL = await getImageUrl(record, recordImage);
+console.log(imageURL);
+
+---
+
+{imageURL && 
+    <img /* j'ai utiliser un img car nous avions regardé pendant longtemps et nous n'arrivions pas à faire marcher la balise Image */
+        src={imageURL}
+        alt={record.nomMaison || 'Image'}
+        class="w-32 h-32 object-cover rounded-lg shadow-lg group-hover:shadow-orange-500/50 transition-all duration-500"
+    />
+}
