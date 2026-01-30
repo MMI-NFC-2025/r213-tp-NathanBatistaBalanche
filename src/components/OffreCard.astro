@@ -2,8 +2,8 @@
 const { offre } = Astro.props;
 ---
 
-<ul data-favori={offre.favori.toString()} class="backdrop-blur-md bg-black/30 border border-red-400/30 rounded-lg p-3 shadow-2xl shadow-red-500/10 hover:shadow-orange-500/25 group relative transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] overflow-hidden h-[220px] flex flex-col space-y-1 text-xs font-medium">
-    <li class="text-white font-bold text-base truncate leading-tight -mb-1">{offre.nomMaison}</li>
+<ul data-favori={offre.favori.toString()} class="backdrop-blur-md bg-black/30 border border-red-400/30 rounded-lg p-3 shadow-2xl shadow-red-500/10 hover:shadow-orange-500/25 group relative transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] overflow-hidden flex flex-col space-y-1 text-xs font-medium">
+    <li class="text-white font-bold text-base truncate leading-tight mb-1">{offre.nomMaison}</li>
     <li class="text-gray-300 text-xs truncate leading-tight mb-1">{offre.adresse}</li>
     <li class="text-orange-400 font-bold text-sm drop-shadow-lg">{offre.prix} €</li>
     <li class="text-gray-200 text-xs flex items-center space-x-1">
@@ -14,12 +14,11 @@ const { offre } = Astro.props;
         <span class="text-orange-300">{offre.nbSdb} salles de bain</span>
     </li>
     <li class="flex-1 flex items-center justify-center">
-        <img src={offre.imgUrl} alt={offre.nomMaison} class="w-24 h-24 object-cover rounded-lg shadow-lg group-hover:shadow-orange-500/50 transition-all duration-500" />
+        <img src={offre.image} alt={offre.nomMaison} class="w-32 h-32 object-cover rounded-lg shadow-lg group-hover:shadow-orange-500/50 transition-all duration-500" />
     </li>
     <li class="group/card relative pt-1 self-end">
         <span class="text-xs font-semibold px-2 py-1 bg-white/10 backdrop-blur-sm rounded-full {offre.favori ? 'text-orange-400 shadow-orange-500/30' : 'text-gray-400 shadow-gray-500/20'} transition-all duration-500">
             {offre.favori ? "☆ Favori" : "Non Favori"}
         </span>
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-red-400 to-orange-400 group-hover:w-full transition-all duration-500"></span>
     </li>
 </ul>
