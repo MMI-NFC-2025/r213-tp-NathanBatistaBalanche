@@ -26,3 +26,15 @@ export async function getOffre(id) {
         return null;
     }
 }
+
+export async function allMaisonsSup(surfacemin){
+    try {
+    const records = await pb.collection('maisons').getFullList ({
+        filter: `surface>${surfacemin}`
+    }) ;
+    return records;
+    } catch (error) {
+        console.log('Une erreur est survenue en lisant les maisons', error) ;
+        return [];
+    }
+}

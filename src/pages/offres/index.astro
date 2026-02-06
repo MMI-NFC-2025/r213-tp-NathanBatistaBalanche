@@ -18,7 +18,10 @@ const offres = await getOffres();
             </div>
         ))}
     </div>
-    <button id="favori-button" class="bg-slate-600 rounded-lg text-white p-2">Afficher les favoris</button>
+    <button id="favori-button" class="bg-slate-600 rounded-lg text-white p-2 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] overflow-hidden flex flex-col ml-3 mb-3">Afficher les favoris</button>
+    <button onclick="window.location.href='/offres/surface/80'" class="bg-slate-600 rounded-lg text-white p-2 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] overflow-hidden flex flex-col ml-3 mb-3">
+        🏠  Accéder aux maisons > 80m²
+    </button>
 </Layout>
 <script>
     const button = document.getElementById('favori-button');
