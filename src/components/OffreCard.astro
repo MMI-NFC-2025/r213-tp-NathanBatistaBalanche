@@ -8,14 +8,14 @@ const { offre } = Astro.props;
     <li class="text-white font-bold text-base truncate leading-tight mb-1">{offre.nomMaison}</li>
     <li class="text-gray-300 text-xs truncate leading-tight mb-1">{offre.adresse}</li>
     <li class="text-orange-400 font-bold text-sm drop-shadow-lg">{offre.prix} €</li>
-    <li class="text-gray-200 text-xs flex items-center space-x-1">
+    <li class="text-gray-200 text-xs flex items-center space-x-1 mb-2">
         <span>{offre.surface} m²</span>
         <span>•</span>
         <span class="text-orange-300">{offre.nbChambres} chambres</span>
         <span>•</span>
         <span class="text-orange-300">{offre.nbSdb} salles de bain</span>
     </li>
-    <li class="flex-1 flex items-center justify-center">
+    <li class="flex-1 flex items-center justify-center mb-4">
         <PbImage record={offre} recordImage={offre.image[0]} />
    </li>
     <li class="group/card relative pt-1 self-end">
