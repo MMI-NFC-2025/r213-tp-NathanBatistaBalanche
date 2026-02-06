@@ -23,4 +23,5 @@ const { offre } = Astro.props;
             {offre.favori ? "☆ Favori" : "Non Favori"}
         </span>
     </li>
+    <a href={`/offres/${offre.id}`} class="text-orange-400 font-bold text-sm drop-shadow-lg underline">Voir plus</a>
 </ul>
