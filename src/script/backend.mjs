@@ -38,3 +38,15 @@ export async function allMaisonsSup(surfacemin){
         return [];
     }
 }
+
+export async function allMaisonsInfPrice(pricemax){
+    try {
+    const records = await pb.collection('maisons').getFullList ({
+        filter: `prix<${pricemax}`
+    }) ;
+    return records;
+    } catch (error) {
+        console.log('Une erreur est survenue en lisant les maisons', error) ;
+        return [];
+    }
+}

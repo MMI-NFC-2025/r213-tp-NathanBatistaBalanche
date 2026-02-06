@@ -3,14 +3,10 @@ import '../../../styles/global.css';
 import Layout from '../../../layouts/Layout.astro';
 import OffreCard from '../../../components/OffreCard.astro';
 import {allMaisonsSup} from '../../../script/backend.mjs'
-import { loadRenderers } from 'astro:container';
 
 const  surfacemin  = Astro.params.surface;
-console.log(Astro.params);
 
 const offres = await allMaisonsSup(surfacemin);
-console.log(offres);
-
 ---
 
 <Layout titre="Offres">
@@ -24,7 +20,7 @@ console.log(offres);
             </div>
         ))}
     </div>
-    <button id="favori-button" class="bg-slate-600 rounded-lg text-white p-2">Afficher les favoris</button>
+    <button id="favori-button" class="bg-slate-600 rounded-lg text-white p-2 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] overflow-hidden flex flex-col ml-3 mb-3">Afficher les favoris</button>
 </Layout>
 <script>
     const button = document.getElementById('favori-button');
